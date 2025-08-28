@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vocab Trainer</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Màn hình chọn topic -->
+    <section id="topicScreen">
+      <header>
+        <div>
+          <div class="title">📚 Chọn chủ đề từ vựng</div>
+          <div class="subtitle">15 chủ đề luyện tập tiếng Anh</div>
+        </div>
+      </header>
+      <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); margin-top:20px;">
+        <!-- Topic list render bằng JS -->
+        <div id="topicList"></div>
+      </div>
+    </section>
+
+    <!-- Màn hình học (theo UI mẫu bạn đưa) -->
+    <section id="studyScreen" class="hidden">
+      <header>
+        <div>
+          <div class="title" id="topicTitle"></div>
+          <div class="subtitle">Chế độ học: Lật thẻ • Điền từ • Làm bài kiểm tra | Lọc theo loại từ | Tiến độ & kết quả</div>
+        </div>
+        <div class="badge" id="statsBadge">0 mục</div>
+      </header>
+
+      <button id="backBtn" style="margin-bottom:16px">⬅ Quay lại chọn chủ đề</button>
+
+      <div class="panel">
+        <div class="tabs">
+          <div class="tab active" data-mode="flash">1) Lật thẻ</div>
+          <div class="tab" data-mode="fill">2) Điền từ</div>
+          <div class="tab" data-mode="test">3) Kiểm tra</div>
+          <div class="spacer"></div>
+          <div class="chip"><label><input type="checkbox" class="pos-filter" value="noun" checked> Danh từ</label></div>
+          <div class="chip"><label><input type="checkbox" class="pos-filter" value="verb" checked> Động từ</label></div>
+          <div class="chip"><label><input type="checkbox" class="pos-filter" value="adj" checked> Tính từ</label></div>
+          <button id="shuffleBtn" title="Trộn danh sách">Trộn</button>
+        </div>
+
+        <!-- FLASHCARDS -->
+        <section id="flash" class="grid" style="margin-top:12px;">
+          <div class="card-wrap">
+            <div class="card" id="flashCard">
+              <div class="face front">
+                <div class="prompt" id="flashFront"></div>
+                <div class="hint">Nhấn để lật thẻ</div>
+              </div>
+              <div class="face back">
+                <div class="prompt" id="flashBack"></div>
+                <div class="hint" id="flashPos"></div>
+              </div>
+            </div>
+          </div>
+          <div class="toolbar">
+            <button id="prevBtn">◀ Trước</button>
+            <div class="badge" id="progress">0 / 0</div>
+            <button id="nextBtn">Tiếp ▶</button>
+          </div>
+        </section>
+
+        <!-- FILL-IN -->
+        <section id="fill" class="grid hidden" style="margin-top:12px;">
+          <div class="fill-box">
+            <div class="row">
+              <div class="chip">
+                <label>
+                  Hướng: 
+                  <select id="direction">
+                    <option value="en2vi">EN → VI</option>
+                    <option value="vi2en">VI → EN</option>
+                  </select>
+                </label>
+              </div>
+              <button id="newFill">Câu khác</button>
+            </div>
+            <div class="question" id="fillPrompt"></div>
+            <div class="row">
+              <input id="fillInput" type="text" placeholder="Nhập đáp án…" autocomplete="off" />
+              <button id="checkFill">Kiểm tra</button>
+            </div>
+            <div id="fillFeedback" class="feedback"></div>
+          </div>
+        </section>
+
+        <!-- TEST -->
+        <section id="test" class="grid hidden" style="margin-top:12px;">
+          <div class="row">
+            <div class="chip">
+              <label>Số câu: <input id="numQuestions" type="number" value="10" min="5" max="30" step="1" style="width:80px"></label>
+            </div>
+            <div class="chip">
+              <label>Hướng: 
+                <select id="testDirection">
+                  <option value="en2vi">EN → VI</option>
+                  <option value="vi2en">VI → EN</option>
+                </select>
+              </label>
+            </div>
+            <button id="startTest">Bắt đầu bài kiểm tra</button>
+          </div>
+          <div id="quizBox" class="quiz hidden"></div>
+          <div id="resultBox" class="hidden"></div>
+        </section>
+      </div>
+
+      <div class="footer">Mẹo: dùng phím <b>← / →</b> để chuyển thẻ, <b>Space</b> để lật.</div>
+    </section>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
