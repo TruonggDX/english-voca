@@ -109,10 +109,12 @@
   .adj{ background:rgba(251,146,60,.18) }
 
   .hidden{ display:none }
-  #topicList {
-    display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  #topic-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* khoảng cách giữa các card */
+    padding: 10px;
   }
   
   .topic-card {
@@ -153,4 +155,9 @@
   .questionBox button.selected.wrong {
     background: salmon;
   }
-  
+  @media (max-width: 600px) {
+    .card {
+      flex: 1 1 100%; /* Mỗi card chiếm full width */
+      max-width: 100%;
+    }
+  }
