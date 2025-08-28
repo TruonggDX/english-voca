@@ -157,7 +157,6 @@
   }
   @media (max-width: 600px) {
     .card {
-      flex: 1 1 100%; /* Mỗi card chiếm full width */
-      max-width: 100%;
+      width: min(350px, 92vw); /* mobile nhỏ gọn hơn */
     }
   }
