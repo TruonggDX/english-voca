@@ -29,11 +29,21 @@
     border:1px solid rgba(255,255,255,.07);
     border-radius:18px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,.25)
   }
-  .tabs{display:flex; gap:8px; flex-wrap:wrap}
+  .tabs{
+    display:flex; 
+    gap:8px; 
+    flex-wrap:wrap}
   .tab{
-    padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.1);
-    background:var(--chip); color:var(--text); cursor:pointer; user-select:none;
-    font-weight:600; letter-spacing:.2px; transition:transform .08s ease, background .2s ease, box-shadow .2s ease
+    padding:10px 14px; 
+    border-radius:12px; 
+    border:1px solid rgba(255,255,255,.1);
+    background:var(--chip); 
+    color:var(--text); 
+    cursor:pointer; 
+    user-select:none;
+    font-weight:600; 
+    letter-spacing:.2px; 
+    transition:transform .08s ease, background .2s ease, box-shadow .2s ease
   }
   .tab.active{ background:linear-gradient(180deg, rgba(34,211,238,.25), rgba(167,139,250,.25)); box-shadow:0 6px 18px rgba(34,211,238,.25)}
   .tab:active{ transform:translateY(1px)}
@@ -113,7 +123,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* khoảng cách giữa các card */
+    gap: 20px; 
     padding: 10px;
   }
   
@@ -133,8 +143,8 @@
   }
   .questionBox {
     display: flex;
-    flex-wrap: wrap;   /* nếu màn hình nhỏ thì tự xuống dòng */
-    gap: 30px;         /* khoảng cách giữa các đáp án */
+    flex-wrap: wrap;   
+    gap: 30px;         
     margin: 20px 0;
   }
   
@@ -155,8 +165,59 @@
   .questionBox button.selected.wrong {
     background: salmon;
   }
-  @media (max-width: 600px) {
-    .card {
-      width: min(350px, 92vw); /* mobile nhỏ gọn hơn */
-    }
+
+@media (max-width: 600px) {
+  .tab {
+    padding: 8px 10px;
+    font-size: 13px;
   }
+  .chip {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .tabs .tab {
+    text-align: center;
+  }
+
+  .tabs .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  #shuffleBtn {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .card {
+    width: min(320px, 92vw);
+  }
+  .prompt {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+  .questionBox {
+    display: flex;
+    flex-direction: column; 
+    gap: 12px; 
+  }
+  
+  .questionBox p {
+    margin: 0; 
+    white-space: nowrap; 
+    font-weight: 700;
+  }
+  
+}
+
+  
