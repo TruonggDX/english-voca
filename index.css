@@ -228,13 +228,13 @@
     font-weight: 700;
   }
   #statsBadge{
-    width: 100px;
+    width: 120px;
   }
   .toolbar{
     margin-top: 0;
   }
   .panel{
-    height: 550px;
+    height: 520px;
   }
 }
 
