@@ -8,7 +8,7 @@
     --good:#34d399; /* green-400 */
     --bad:#f87171; /* red-400 */
     --warn:#facc15; /* yellow-400 */
-    --card:#0b1220; /* darker card */
+    --card:#0b1220;
     --chip:#1f2937; /* gray-800 */
   }
   *{box-sizing:border-box}
@@ -18,7 +18,10 @@
     background: radial-gradient(1200px 800px at 20% 0%, #0b1220 30%, #020617 100%), var(--bg);
     color:var(--text);
   }
-  .container{max-width:1100px; margin:32px auto; padding:0 16px}
+  .container{
+    max-width:1100px;
+    margin:32px auto; 
+    padding:0 16px}
   header{
     display:flex; gap:16px; align-items:center; justify-content:space-between; margin-bottom:16px
   }
@@ -85,9 +88,17 @@
   }
   .card.is-flipped{ transform:rotateY(180deg) }
   .face{
-    position:absolute; inset:0; backface-visibility:hidden; border-radius:20px; border:1px solid rgba(255,255,255,.12);
+    position:absolute; 
+    inset:0; 
+    backface-visibility:hidden; 
+    border-radius:20px; 
+    border:1px solid rgba(255,255,255,.12);
     background:radial-gradient(1000px 400px at 100% 0%, rgba(34,211,238,.15), transparent), var(--card);
-    display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px; text-align:center
+    display:flex; 
+    flex-direction:column; 
+    align-items:center; 
+    justify-content:center; 
+    padding:24px; text-align:center
   }
   .face.back{ transform:rotateY(180deg); background:radial-gradient(1000px 400px at 0% 100%, rgba(167,139,250,.18), transparent), var(--card) }
   .prompt{ font-size:clamp(28px, 5vw, 40px); font-weight:800; letter-spacing:.5px }
@@ -112,7 +123,6 @@
   .option.correct{ outline:2px solid var(--good) }
   .option.wrong{ outline:2px solid var(--bad) }
 
-  .footer{ margin-top:20px; color:#94a3b8; font-size:12px; text-align:center }
   .pos-chip{ padding:6px 8px; border-radius:8px; font-size:12px; border:1px solid rgba(255,255,255,.12); opacity:.9 }
   .noun{ background:rgba(99,102,241,.18) }
   .verb{ background:rgba(34,197,94,.18) }
@@ -217,7 +227,12 @@
     white-space: nowrap; 
     font-weight: 700;
   }
-  
+  #statsBadge{
+    width: 100px;
+  }
+  .toolbar{
+    margin-top: 0;
+  }
 }
 
   
