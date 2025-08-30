@@ -84,7 +84,8 @@
     position:relative; 
     transform-style:preserve-3d; 
     transition:transform .6s cubic-bezier(.2,.8,.2,1);
-    cursor:pointer
+    cursor:pointer;
+    margin-top: 15px;
   }
   .card.is-flipped{ transform:rotateY(180deg) }
   .face{
